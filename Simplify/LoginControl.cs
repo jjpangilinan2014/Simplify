@@ -16,5 +16,30 @@ namespace Simplify
         {
             InitializeComponent();
         }
+        public static bool alreadyLogin = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                label1.Text = "User Registration";
+            }
+            else
+            {
+                label1.Text = "User Login";
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked && !alreadyLogin)
+            {
+                if (textBox1.Text == "admin" && textBox2.Text == "admin")
+                {
+                    alreadyLogin = true;
+                    this.Visible = false;
+                    Form2.uRecord.Visible = true;
+                }
+            }
+        }
     }
 }

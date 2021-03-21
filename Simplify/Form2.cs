@@ -12,6 +12,8 @@ namespace Simplify
 {
     public partial class Form2 : Form
     {
+        
+
         public Form2()
         {
             InitializeComponent();
@@ -40,6 +42,19 @@ namespace Simplify
         private void button1_Click(object sender, EventArgs e)
         {
             //label1.Text = button1.Text;
+        }
+        public static LoginControl uLogin = new LoginControl();
+        public static Record uRecord = new Record();
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            uLogin.Dock = DockStyle.Fill;
+            panel2.Controls.Add(uLogin);
+
+            uRecord.Dock = DockStyle.Fill;
+            panel2.Controls.Add(uRecord);
+            uRecord.Visible = false;
+
+
         }
     }
 }

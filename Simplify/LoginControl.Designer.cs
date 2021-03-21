@@ -49,6 +49,7 @@ namespace Simplify
             this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Register";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button5
             // 
@@ -63,6 +64,7 @@ namespace Simplify
             this.button5.TabIndex = 16;
             this.button5.Text = "Login";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label3
             // 
