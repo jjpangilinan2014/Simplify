@@ -29,7 +29,7 @@ namespace Simplify
                 queryString["showStats"] = "true";
                 queryString["stringIndexType"] = "TextElements_v8";
 
-                var uri = "https://simplifylytics.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/linking?" + queryString;*/
+                var uri = "https://simplifylytics.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/keyPhrase?" + queryString;*/
                 httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "282cd5fa03de40d0ad34003a7f56a691");
                 using (var request = new HttpRequestMessage(new HttpMethod(anoReq), uri))
                 {
@@ -50,12 +50,12 @@ namespace Simplify
             }
 
         }
-
+        public static string _textRead = null;
         private void button1_Click(object sender, EventArgs e)
         {
             var text = System.IO.File.ReadAllText(@"WriteText.txt");
 
-            
+            _textRead = text;
             var phrases = text.KeyPhrases();
 
 
@@ -99,6 +99,9 @@ namespace Simplify
             Form hideBg = new Form();
             try
             {
+                var text = System.IO.File.ReadAllText(@"WriteText.txt");
+
+                _textRead = text;
                 using (Form4 form4 = new Form4())
                 {
                     hideBg.StartPosition = FormStartPosition.Manual;

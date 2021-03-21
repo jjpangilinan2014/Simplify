@@ -32,7 +32,7 @@ namespace Simplify
             string content = @"Do you have a history of hypertension in your family? …So your father and your grandmother has hypertension, I see I see. Okay I will now place an inflatable arm cuff on your arm to monitor your blood pressure… oh, you have a blood pressure of 141/92.
 Oookay. Bad news first, you are diagnosed with Stage 2 Hypertension, don’t worry Morrison, here is the good news: this can be treated as long as you remember to take your required medication. 
 for your prescription: I’m going to have you take 5 milligrams of amlodipine everyday. Now please, do not miss a day of your meds, and as with every other medicine, you should only be eating this after every meal if you can. As for your treatment, besides watching what you eat it is recommended that you lose weight. According to your record, you are 78 kilograms... your treatment will be smoother if you try to lose weight. Even if you did have a lower blood pressure on your next check up, please do not stop on your medication. It is very important.";
-            string joms = "{\"documents\": [{ \"language\": \"en\",\"id\": \"1\", \"text\": \"" + content + "\" }]}";
+            string joms = "{\"documents\": [{ \"language\": \"en\",\"id\": \"1\", \"text\": \"" + Help_Desk._textRead + "\" }]}";
 
 
             using (var httpClient = new HttpClient())
