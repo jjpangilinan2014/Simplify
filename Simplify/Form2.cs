@@ -54,6 +54,8 @@ namespace Simplify
             panel2.Controls.Add(uRecord);
             uRecord.Visible = false;
 
+           
+
 
         }
     }
