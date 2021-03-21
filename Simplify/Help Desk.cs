@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using TextRank;
 
 namespace Simplify
 {
@@ -48,6 +49,81 @@ namespace Simplify
                 }
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var text = System.IO.File.ReadAllText(@"WriteText.txt");
+
+            
+            var phrases = text.KeyPhrases();
+
+
+            Form hideBg = new Form();
+            try
+            {
+                using(Form3 form3 = new Form3(phrases.Item1))
+                {
+                    hideBg.StartPosition = FormStartPosition.Manual;
+                    hideBg.FormBorderStyle = FormBorderStyle.None;
+                    hideBg.Opacity = 0.70d;
+                    hideBg.BackColor = Color.Black;
+                    hideBg.WindowState = FormWindowState.Maximized;
+                    hideBg.TopMost = true;
+                    hideBg.Location = this.Location;
+                    hideBg.ShowInTaskbar = false;
+                    hideBg.Show();
+                    form3.Owner = hideBg;
+
+                    form3.ShowDialog();
+                    hideBg.Dispose();
+                }
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                hideBg.Dispose();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form hideBg = new Form();
+            try
+            {
+                using (Form4 form4 = new Form4())
+                {
+                    hideBg.StartPosition = FormStartPosition.Manual;
+                    hideBg.FormBorderStyle = FormBorderStyle.None;
+                    hideBg.Opacity = 0.70d;
+                    hideBg.BackColor = Color.Black;
+                    hideBg.WindowState = FormWindowState.Maximized;
+                    hideBg.TopMost = true;
+                    hideBg.Location = this.Location;
+                    hideBg.ShowInTaskbar = false;
+                    hideBg.Show();
+                    form4.Owner = hideBg;
+
+                    form4.ShowDialog();
+                    hideBg.Dispose();
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                hideBg.Dispose();
+            }
         }
     }
 }

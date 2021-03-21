@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transitions;
 
 namespace Simplify
 {
@@ -38,8 +39,16 @@ namespace Simplify
                     alreadyLogin = true;
                     this.Visible = false;
                     Form2.uRecord.Visible = true;
+                    Transition t = new Transition(new TransitionType_EaseInEaseOut(500));
+                    t.add(Form2.uRecord, "Left", 0);
+                    t.run();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
